@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "added_on": "2026-09-03",
+  "purpose": "User-selected theme and layout examples; not artifact-fact or exact-pixel standards",
+  "examples": [
+    {
+      "theme": "青蓝",
+      "ink": "#176F91",
+      "artifact": "良渚文化玉琮王",
+      "file": "01-qinglan-jade-cong.png",
+      "source_file": "良渚文化玉琮王-博物馆图章.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "CC147D90995F2212C2F9ED2FC23CE1BF9218FE4BFB081964876CC315530DD86E",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    },
+    {
+      "theme": "鎏金",
+      "ink": "#D4AF37",
+      "artifact": "五代鎏金纯银阿育王塔",
+      "file": "02-gold-ashoka-stupa.png",
+      "source_file": "五代鎏金纯银阿育王塔-博物馆图章-鎏金.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "9DC5AEF3F2ADB67215B555F05473E9450162228CC36D80FA19749AA2B4C78E68",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    },
+    {
+      "theme": "天青灰",
+      "ink": "#A1B4B2",
+      "artifact": "辽代金盖鹅形水晶香囊（修正版）",
+      "file": "03-sky-gray-crystal-sachet.png",
+      "source_file": "辽代金盖鹅形水晶香囊-博物馆图章-v2.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "0D8017E12F2C13BBA36378AF32E1177ABC0AE5D8FC1BC5671922A8881B5F0F5F",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    },
+    {
+      "theme": "艾绿",
+      "ink": "#7BAE7F",
+      "artifact": "春秋伎乐铜屋",
+      "file": "04-ai-green-bronze-house.png",
+      "source_file": "春秋伎乐铜屋-博物馆图章-艾绿.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "2A2C9F9FF2BDD393A14CA15A368FCA6FB29FE2640BBB30884457A2BA6CAFA0DC",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    },
+    {
+      "theme": "枫丹",
+      "ink": "#D46A4A",
+      "artifact": "河姆渡文化木胎朱漆碗",
+      "file": "05-maple-red-lacquer-bowl.png",
+      "source_file": "河姆渡文化木胎朱漆碗-博物馆图章-枫丹.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "1098915DCF4F0354F5852393084E006B789769EB5854C5CC1DA8130ED030F285",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    },
+    {
+      "theme": "青川",
+      "ink": "#87BFB7",
+      "artifact": "元龙泉窑青瓷舟形砚滴",
+      "file": "06-qingchuan-celadon-boat.png",
+      "source_file": "元龙泉窑青瓷舟形砚滴-博物馆图章-青川.png",
+      "width": 1086,
+      "height": 1448,
+      "sha256": "107077484278F87338748497D74E3F4C80CF05E05451F116393815D24715364C",
+      "rights_status": "self_created_user_confirmed",
+      "provenance": "User-confirmed collaborative AI-assisted creation, 2026-09-03",
+      "original_visual_license": "CC-BY-4.0",
+      "license_scope": "licensor_owned_original_visual_contributions_only"
+    }
+  ],
+  "rights_record": "../rights-manifest.json"
+}

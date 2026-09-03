@@ -1,0 +1,8 @@
+interface:
+  display_name: "博物馆文物图章"
+  short_description: "根据任意馆藏文物素材生成固定暖纸底、可选主题印色的博物馆图章"
+  brand_color: "#176F91"
+  default_prompt: "Use $museum-relic-stamp to turn this artifact reference into a matching museum stamp poster."
+
+policy:
+  allow_implicit_invocation: true

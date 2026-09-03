@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "audited_on": "2026-09-03",
+  "skill_creator": "@木渡川（TANGLELE）",
+  "status_meaning": "self_created_user_confirmed records production provenance; CC-BY-4.0 covers only licensor-owned original visual contributions, not third-party images or fonts",
+  "assets": [
+    {
+      "path": "assets/theme-color-options.png",
+      "sha256": "ead49c5bd95ec7561927a9de15130c290adc377be1422da12692233e33a9e794",
+      "role": "derived_selection_sheet",
+      "known_local_inputs": [
+        "assets/theme-examples/01-qinglan-jade-cong.png",
+        "assets/theme-examples/02-gold-ashoka-stupa.png",
+        "assets/theme-examples/03-sky-gray-crystal-sachet.png",
+        "assets/theme-examples/04-ai-green-bronze-house.png",
+        "assets/theme-examples/05-maple-red-lacquer-bowl.png",
+        "assets/theme-examples/06-qingchuan-celadon-boat.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/01-qinglan-jade-cong.png",
+      "sha256": "cc147d90995f2212c2f9ed2fc23ce1bf9218fe4bfb081964876cc315530dd86e",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "良渚文化玉琮王-博物馆图章.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/02-gold-ashoka-stupa.png",
+      "sha256": "9dc5aef3f2adb67215b555f05473e9450162228cc36d80fa19749aa2b4c78e68",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "五代鎏金纯银阿育王塔-博物馆图章-鎏金.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/03-sky-gray-crystal-sachet.png",
+      "sha256": "0d8017e12f2c13bba36378af32e1177abc0ae5d8fc1bc5671922a8881b5f0f5f",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "辽代金盖鹅形水晶香囊-博物馆图章-v2.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/04-ai-green-bronze-house.png",
+      "sha256": "2a2c9f9ff2bdd393a14ca15a368fca6fb29fe2640bbb30884457a2ba6cafa0dc",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "春秋伎乐铜屋-博物馆图章-艾绿.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/05-maple-red-lacquer-bowl.png",
+      "sha256": "1098915dcf4f0354f5852393084e006b789769eb5854c5cc1da8130ed030f285",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "河姆渡文化木胎朱漆碗-博物馆图章-枫丹.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+      "path": "assets/theme-examples/06-qingchuan-celadon-boat.png",
+      "sha256": "107077484278f87338748497d74e3f4c80cf05e05451f116393815d24715364c",
+      "role": "active_theme_example",
+      "known_local_inputs": [
+        "元龙泉窑青瓷舟形砚滴-博物馆图章-青川.png"
+      ],
+      "source_url": null,
+      "rights_holder": null,
+      "license": "CC-BY-4.0",
+      "evidence": "User confirmed on 2026-09-03 that the six examples were made collaboratively in this workflow; selection PNG is derived from those examples.",
+      "rights_status": "self_created_user_confirmed",
+      "creator_credit": "@木渡川（TANGLELE）, AI-assisted production",
+      "downstream_license": "CC-BY-4.0_for_licensor_owned_original_visual_contributions",
+      "third_party_inputs": "separate_from_finished_example_provenance",
+      "reference_image_source": {
+        "category": "official_public_image_materials",
+        "basis": "user_confirmed",
+        "confirmed_on": "2026-09-03",
+        "reuse_terms": "subject_to_source_terms; public_access_is_not_an_open_license"
+      },
+      "license_scope": "licensor_owned_original_visual_contributions_only",
+      "attribution": "@木渡川（TANGLELE）",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "华文楷体 / STKaiti",
+      "use": "rendered labels in selection-sheet PNG",
+      "font_binary_bundled": false,
+      "local_acquisition_and_license": "unverified",
+      "license_note": "See references/rights-and-attribution.md#字体使用说明; static output and font redistribution have different terms."
+    },
+    {
+      "family": "Georgia",
+      "use": "rendered labels in selection-sheet PNG",
+      "font_binary_bundled": false,
+      "local_acquisition_and_license": "unverified",
+      "license_note": "See references/rights-and-attribution.md#字体使用说明; static output and font redistribution have different terms."
+    }
+  ],
+  "package_license": "MIT for scripts, prompts and documentation; CC-BY-4.0 for licensor-owned original visual contributions",
+  "copyright_notice": "Copyright (c) 2026 @木渡川（TANGLELE）",
+  "licenses": {
+    "scripts_prompts_documentation": "MIT",
+    "original_visual_contributions": "CC-BY-4.0",
+    "third_party_materials": "original_terms"
+  }
+}
