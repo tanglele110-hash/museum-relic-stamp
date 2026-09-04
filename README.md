@@ -62,6 +62,34 @@
 
 ## 安装方式
 
+### 使用 Skills CLI 安装（推荐）
+
+本机已安装 Node.js 与 npm 时，可以直接运行，无需预先全局安装 CLI：
+
+```bash
+npx skills add tanglele110-hash/museum-relic-stamp
+```
+
+CLI 会识别仓库中的 `museum-relic-stamp`，并让你选择目标 Agent、项目级或全局安装，以及符号链接或复制方式。仅为 Codex 执行全局安装时可以使用：
+
+```bash
+npx skills add tanglele110-hash/museum-relic-stamp \
+  --skill museum-relic-stamp \
+  --agent codex \
+  --global
+```
+
+查看仓库中可安装的 Skill，或更新已安装版本：
+
+```bash
+npx skills add tanglele110-hash/museum-relic-stamp --list
+npx skills update museum-relic-stamp
+```
+
+`npx skills add` 会安装完整的 Skill 文件和图片资源，但不会执行仓库脚本或自动安装 Python 依赖。使用输出标准化脚本前，请按下文安装 `requirements.txt`。
+
+### 手动安装
+
 下载本仓库，将完整的 `museum-relic-stamp` 文件夹放置到 AI 工具对应的 Skill 目录下，按照工具说明完成重载即可。
 
 请勿删除文件夹内附带的图片与参考文档。安装完成后，可直接口述 “调用博物馆图章”；部分工具内也可使用指令调用：
@@ -79,6 +107,19 @@ $museum-relic-stamp
 默认输出为**3:4 竖版构图**，基础分辨率 `768 × 1024`，也可选择更高规格 `1536 × 2048`。
 
 图片与文字为一次性生成，偶尔会出现文字错漏、细节失真或是尺寸偏差。导出前建议人工复核，尤其留意文物名称与小字注释。文档内的六张展示样例分辨率为 `1086 × 1448`，仅用作风格演示。
+
+生成器原生输出为更大的严格 3:4 图片时，可以使用跨平台脚本统一检查、等比缩小并自动生成不覆盖旧文件的名称。脚本不会裁切、拉伸或放大图片：
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 scripts/normalize-output.py generated.png \
+  --size 768x1024 \
+  --name changxin-palace-lamp-gold-stamp \
+  --output-dir output/museum-relic-stamp \
+  --json
+```
+
+若目标文件已存在，会依次创建 `-v2.png`、`-v3.png`。使用 `--check-only` 可只检查、不写入文件；2K 交付版使用 `--size 1536x2048`。输入比例不是严格 3:4 或像素低于目标时，脚本会失败并保持源文件不变。
 
 本项目属于个人创作工具，生成的图像不等同于博物馆官方出品物料。
 
