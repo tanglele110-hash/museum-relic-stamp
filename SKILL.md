@@ -57,6 +57,20 @@ Read both references before every generation.
 - Only portrait 3:4 is allowed. Default to 1K `768 × 1024`; use 2K `1536 × 2048` when requested. Never generate a 2:3 canvas. Verify the saved file's real pixel dimensions before reporting.
 - Paper is always warm ivory `#F0ECE3`. Theme ink, not paper, colors all typography, frames, icons, and ornaments. Offer `#176F91`, `#D4AF37`, `#A1B4B2`, `#7BAE7F`, `#D46A4A`, and `#87BFB7`. There is no automatic color default. Preserve artifact colors and vermilion seals.
 
+## 输出检查、缩放与版本命名 / Output normalization
+
+- 内容生成仍由图像模型一次完成；像素标准化只调整整张成品的尺寸，不重排或重绘其中元素。内容检查与必要的局部修正完成后，对最终图片使用 [scripts/normalize-output.py](scripts/normalize-output.py) 统一检查真实尺寸、严格 3:4 比例、是否达到目标像素，并生成不覆盖旧文件的交付版。
+- 脚本依赖 Python 3 与 Pillow（见 [requirements.txt](requirements.txt)），兼容 macOS、Linux 与 Windows。将脚本和依赖文件路径解析为当前 Skill 目录下的真实绝对路径。输出目录依次采用用户指定位置、工作区产物目录约定；两者均未指定时，才使用当前工作区的 `output/museum-relic-stamp/`。始终通过 `--output-dir` 显式传入选定目录。
+- 先确认可用的 Python 3 解释器：macOS/Linux 通常使用 `python3`，Windows 可使用 `python` 或 `py -3`；依赖安装与脚本运行使用同一解释器。调用示例：`python3 "<绝对脚本路径>" "<最终图片路径>" --size 768x1024 --name "<文物名-主题色-stamp>" --output-dir "<输出目录>" --json`。2K 使用 `--size 1536x2048`。`--name` 可用中文或英文；脚本会替换跨平台非法字符。
+- 原图已经是目标尺寸时，脚本只做验证和规范化保存；原图为严格 3:4 且宽高均不低于目标时，使用 Lanczos 等比向下缩放。脚本不得裁切、拉伸、放大或覆盖已有文件；重名时自动使用 `-v2`、`-v3`。始终保留图像模型的原始输出。
+- 比例不为 3:4、像素小于目标、图片损坏或脚本失败时，不把结果标为合格。比例、主体、整体材质或整套配色错误可以全局重生成一次；单纯的超规格 3:4 输出应标准化缩小，不消耗全局重试。
+
+- Generate the complete image with the image model. After content checks and any targeted correction, run [scripts/normalize-output.py](scripts/normalize-output.py) on the final image to validate its real dimensions and save a non-overwriting delivery file. Normalization only resizes the whole image; it never retypesets or redraws elements.
+- Python 3 and Pillow are required (see [requirements.txt](requirements.txt)). Resolve the script and requirements paths against the installed Skill directory and quote paths. Use an available Python 3 interpreter (`python3` on macOS/Linux, or `python` / `py -3` on Windows), using the same interpreter for dependency installation and execution.
+- Choose the output directory in this order: the user's explicit path, workspace artifact conventions, then `output/museum-relic-stamp/` under the current workspace. Always pass the selected directory explicitly with `--output-dir`. Use `--size 768x1024` by default or `--size 1536x2048` for 2K; `--name` accepts Chinese or English and sanitizes unsafe filename characters.
+- Preserve model originals. Validate and save an exact-size image; downscale an oversized strict 3:4 image with Lanczos. Never crop, stretch, upscale, or overwrite; use `-v2`, `-v3` for existing names. Wrong aspect ratios, insufficient resolution, damaged images, and script failures are not acceptable deliveries.
+- Allow at most one global regeneration for incorrect aspect ratio, identity, overall material, or palette. An oversized strict 3:4 image only needs downscaling and does not consume that retry. After any further image edit, validate and normalize the resulting final image again before delivery.
+
 ## 生成前主题色选择 / Theme selection gate
 
 - 用户已明确指定颜色时按指定颜色执行；已经明确说“由你判断 / 你来选 / 自行配色”时，才自主选色：优先从六种主题色中选择与用户素材中文物主体本色同色系或色系相近的一种；以主体为判断依据，排除照片背景、展台和叠加文字的颜色干扰。在相近色候选之间，再结合材质、冷暖关系与纸底上的文字可读性取舍。生成前简述主体色系与所选主题色的关系，不再重复询问。
@@ -75,16 +89,18 @@ When the user explicitly delegates theme selection, first choose a theme from th
 1. 从 `assets/theme-examples/manifest.json` 查找选定主题色对应的成品：默认输入用户素材 + 该样例；必要时从六张样例中再补一张构图相近的成品，最多三张输入。自定义颜色没有对应样例时，选色系或构图最接近的样例，并明确以用户指定印色覆盖样例印色。新版综合色卡只用于选色；旧十二兽首参考图和单色色卡截图退出生成流程。提示词直接写明主题色名称和 Hex、固定暖象牙纸底，以及样例只控制版式和印刷风格。
 2. 根据文物类别选择合适的展示方式：器物和雕塑使用居中完整陈列；书画、织物和扁平文物保持平面比例；细长或横向文物可缩放留白，不裁断关键部位。
 3. 使用内置图像生成能力一次生成完整含文字成品。不得静默改成空背景加 SVG、HTML、Canvas 或脚本重排。
-4. 检查主体身份、材质、轮廓、上下文物徽记一致性、左右祥云镜像、标题、四字书法、事实准确性、实际像素尺寸、固定暖象牙背景及所选主印色。
+4. 检查主体身份、材质、轮廓、上下文物徽记一致性、左右祥云镜像、标题、四字书法、事实准确性、固定暖象牙背景及所选主印色。
 5. 若只有一个局部错误，做一次精确图像编辑并冻结其余内容。最多一次局部修正；仍失败则如实报告。
-6. 用户指定路径时按其路径保存；否则遵守工作区产物目录约定。不得覆盖已有文件，使用 `-v2`、`-v3`。
-7. 返回成品路径、采用的名称和事实边界、参考图及修正状态。尺寸以文件实测值为准；严格 3:4 不等于达到目标像素规格。未达标时明确标为未达标预览，不声称合格。全局重生成最多一次，仍失败则报告实际尺寸与缺陷，等待用户决定，不擅自放宽规格或无限重试。
+6. 内容检查与必要的局部修正完成后，对最终图片运行 `scripts/normalize-output.py`，检查真实尺寸并按需等比缩小，核验保存的交付文件。输出目录依次采用用户指定路径、工作区产物目录约定、当前工作区的 `output/museum-relic-stamp/`，通过 `--output-dir` 显式传入。不得覆盖已有文件，使用 `-v2`、`-v3`；标准化后如再次编辑图片，必须对新结果重新检查和标准化。
+7. 返回标准化交付版路径、实测尺寸、脚本报告的动作与版本号、采用的名称和事实边界、参考图及修正状态。严格 3:4 不等于达到目标像素规格；标准化失败时明确标为未达标预览，不声称合格。全局重生成最多一次，仍失败则报告实际尺寸与缺陷，等待用户决定，不擅自放宽规格或无限重试。
 
 1. After theme selection, use the user image plus the matching example from `assets/theme-examples/manifest.json`. Add at most one composition-similar example from the same six-example set when needed: two inputs by default, three at most. For a custom color, choose the closest theme or composition example and explicitly override its ink with the selected color. The selection sheet is display-only; do not load legacy zodiac references or single-color swatch screenshots. Write the theme name and Hex directly in the prompt; examples control layout and print style only.
 2. Preserve the artifact's natural presentation: centered object for vessels and sculpture, flat aspect ratio for paintings and textiles, full silhouette for long or wide objects.
 3. Produce one complete image with text already rendered; do not silently rebuild it with separate typesetting code.
-4. Validate identity, material, silhouette, matching top/footer emblems, mirrored clouds, copy, factual boundaries, real dimensions, fixed ivory paper, and selected theme ink.
-5. Use at most one targeted correction, save non-destructively, and report the result.
+4. Validate identity, material, silhouette, matching top/footer emblems, mirrored clouds, copy, factual boundaries, fixed ivory paper, and selected theme ink.
+5. If needed, make at most one targeted correction while freezing all unrelated content; report any remaining defect.
+6. After content checks and any correction, run `scripts/normalize-output.py` on the final image to validate its real dimensions, downscale an oversized strict 3:4 result when eligible, and verify the saved versioned delivery file. Select the output directory using the precedence above and pass it with `--output-dir`. Never crop, stretch, upscale, or overwrite. If the image is edited again, repeat validation and normalization on the new result.
+7. Return the delivery path, measured dimensions, reported action and version, artifact name and factual boundaries, references, and correction status. Label failed normalization as an unqualified preview. Allow at most one global regeneration; if it still fails, report the actual dimensions and defects and wait for the user's decision without relaxing requirements or retrying indefinitely.
 
 ## 质量红线 / Quality invariants
 
