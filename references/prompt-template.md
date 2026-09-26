@@ -53,8 +53,12 @@ One-pass complete image with all text included, targeting exactly <pixel dimensi
 3. 顶部与底部是否复用同一文物或类别徽记，且没有生肖错配；框顶左右祥云是否为水平镜像。
 4. 文案是否彻底移除不相关的圆明园、生肖和喷泉内容。
 5. 是否出现未经提供的馆名、年代、作者、来源或等级；出现即修正为中性表述。
-6. 先检查原生输出比例；若为严格 3:4 且宽高均不低于目标，使用 `scripts/normalize-output.py` 生成 1K `768 × 1024` 或 2K `1536 × 2048` 交付版。任何 2:3、低于目标或脚本验证失败的输出均不合格，不得裁切或放大冒充合格成品。
+6. 检查原生输出比例；内容检查与必要的局部修正完成后，对最终图片运行 `scripts/normalize-output.py`。若为严格 3:4 且宽高均不低于目标，生成 1K `768 × 1024` 或 2K `1536 × 2048` 交付版。任何 2:3、低于目标或脚本验证失败的输出均不合格，不得裁切或放大冒充合格成品。
 7. 纸底是否固定暖象牙 #F0ECE3；所选主题色及 Hex 是否仅用于文字、框线、图标和装饰线，云纹是否为同色淡印；文物本色与暗朱砂小印是否保留。
+
+最终图片包括局部修正或全局重生成后的结果，不能沿用此前图片的尺寸检查结论。交付前核验标准化文件；若其后再次编辑，必须重新检查和标准化。
+
+Run normalization on the final image after content checks and any targeted correction or global regeneration. Never reuse an earlier image's dimension result. Verify the saved delivery file; any subsequent edit requires validation and normalization again.
 
 ## 局部修正 / Targeted correction
 

@@ -73,10 +73,7 @@ npx skills add tanglele110-hash/museum-relic-stamp
 CLI 会识别仓库中的 `museum-relic-stamp`，并让你选择目标 Agent、项目级或全局安装，以及符号链接或复制方式。仅为 Codex 执行全局安装时可以使用：
 
 ```bash
-npx skills add tanglele110-hash/museum-relic-stamp \
-  --skill museum-relic-stamp \
-  --agent codex \
-  --global
+npx skills add tanglele110-hash/museum-relic-stamp --skill museum-relic-stamp --agent codex --global
 ```
 
 查看仓库中可安装的 Skill，或更新已安装版本：
@@ -108,15 +105,22 @@ $museum-relic-stamp
 
 图片与文字为一次性生成，偶尔会出现文字错漏、细节失真或是尺寸偏差。导出前建议人工复核，尤其留意文物名称与小字注释。文档内的六张展示样例分辨率为 `1086 × 1448`，仅用作风格演示。
 
-生成器原生输出为更大的严格 3:4 图片时，可以使用跨平台脚本统一检查、等比缩小并自动生成不覆盖旧文件的名称。脚本不会裁切、拉伸或放大图片：
+生成器原生输出为更大的严格 3:4 图片时，可以使用跨平台脚本统一检查、等比缩小并自动生成不覆盖旧文件的名称。完成内容检查和必要的局部修图后，再对最终图片运行脚本；后续如再次修图，应对新结果重新检查和标准化。脚本不会裁切、拉伸或放大图片。
+
+以下命令从 Skill 安装目录（包含 `SKILL.md` 和 `requirements.txt`）运行。把输入图片与输出目录替换为实际路径；输出目录优先采用你指定的位置，其次遵守工作区产物目录约定，均未指定时才使用工作区的 `output/museum-relic-stamp/`。在其他目录运行时，依赖文件与脚本也应使用带引号的绝对路径。
+
+macOS / Linux：
 
 ```bash
-python3 -m pip install -r requirements.txt
-python3 scripts/normalize-output.py generated.png \
-  --size 768x1024 \
-  --name changxin-palace-lamp-gold-stamp \
-  --output-dir output/museum-relic-stamp \
-  --json
+python3 -m pip install -r "requirements.txt"
+python3 "scripts/normalize-output.py" "/path/to/final.png" --size 768x1024 --name "changxin-palace-lamp-gold-stamp" --output-dir "/path/to/workspace/output/museum-relic-stamp" --json
+```
+
+Windows PowerShell（确认 `python` 指向 Python 3；若使用 `py -3`，以下两条命令均替换为该解释器）：
+
+```powershell
+python -m pip install -r "requirements.txt"
+python "scripts/normalize-output.py" "C:/path/to/final.png" --size 768x1024 --name "changxin-palace-lamp-gold-stamp" --output-dir "C:/path/to/workspace/output/museum-relic-stamp" --json
 ```
 
 若目标文件已存在，会依次创建 `-v2.png`、`-v3.png`。使用 `--check-only` 可只检查、不写入文件；2K 交付版使用 `--size 1536x2048`。输入比例不是严格 3:4 或像素低于目标时，脚本会失败并保持源文件不变。
